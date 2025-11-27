@@ -1,0 +1,125 @@
+/* 画面全体のベース */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    sans-serif;
+  background: linear-gradient(135deg, #ffe8f2, #e6f3ff);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* タイトル */
+h1 {
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-size: 40px;
+  letter-spacing: 0.08em;
+}
+
+/* アプリ全体の箱 */
+.memo-app {
+  max-width: 600px;          /* 横幅を抑えてカードっぽく */
+  width: 100%;           /* 画面が狭いときはいっぱいまで広がる */
+  margin: 0 16px 40px;   /* 左右に少し余白だけつける */
+  background: #ffffff;
+  padding: 24px 20px 32px;
+  border-radius: 16px;       /* 角を丸く */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* ふわっと影 */
+}
+
+/* 検索エリア */
+.search-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* 入力欄 */
+#keyword {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ffd1e1;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+/* 入力欄フォーカス時のアクセント */
+#keyword:focus {
+  border-color: #ff8bb4;
+  box-shadow: 0 0 0 3px rgba(255, 139, 180, 0.2);
+}
+
+/* ボタン共通 */
+#searchBtn,
+#clear {
+  padding: 8px 16px;
+  border-radius: 999px;     /* カプセル型ボタン */
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s;
+}
+
+/* 検索ボタン：ピンク */
+#searchBtn {
+  background: #ff8bb4;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 139, 180, 0.5);
+}
+
+/* クリアボタン：グレー */
+#clear {
+  background: #f3f3f3;
+  color: #555;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ボタンのホバー／クリック時のちょっとした動き */
+#searchBtn:hover,
+#clear:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+#searchBtn:active,
+#clear:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* 検索結果エリア */
+#content {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* 箇条書きの見た目調整 */
+#content ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+#content li {
+  background: #fff7fb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1px solid #ffd6ea;
+}
