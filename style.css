@@ -74,6 +74,8 @@ h1 {
   font-size: 13px;
   cursor: pointer;
   transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s;
+
+
 }
 
 /* 検索ボタン：ピンク */

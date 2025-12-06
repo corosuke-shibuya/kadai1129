@@ -7,7 +7,7 @@ console.log("★app.js 読み込まれたよ");
 
 $("#clear").on("click", function () {
   localStorage.clear();
-$("#keyword").empty();
+$("#keyword").val("");
     });
 
 
@@ -41,7 +41,7 @@ $(function () {
       for (var i = 0; i < 3; i++) {
         var item = data.items[i];
         view += "<ul>";
-        view += "<li>題名:" + item.volumeInfo.title + "</li>";
+        view += "<li>タイトル:" + item.volumeInfo.title + "</li>";
         view += "</ul>";
       }
 
@@ -56,6 +56,9 @@ $(function () {
               localStorage.getItem("books_view"));
 
   $("#content").html(view);
+
+  $("#keyword").val("");
+
 });
   });
 });
